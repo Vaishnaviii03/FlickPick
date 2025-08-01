@@ -1,0 +1,38 @@
+.sparkle-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+  }
+  
+  .sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkleAnim 5s linear infinite;
+    top: 100%;
+    left: calc(100% * var(--rand));
+  }
+  
+  .sparkle:nth-child(n) {
+    --rand: calc(0.01 * var(--i));
+  }
+  
+  @keyframes sparkleAnim {
+    0% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  

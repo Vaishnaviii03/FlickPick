@@ -1,0 +1,22 @@
+import pickle
+import pandas as pd
+# Open the pickle file
+with open('model/smd.pkl', 'rb') as f:
+    data = pickle.load(f)
+
+# Now print type of loaded data
+print(f"Type of data: {data.info()}")
+
+# If it's a pandas DataFrame, you can call .info() to get a summary
+if isinstance(data, pd.DataFrame):
+    print("Data Info:")
+    print(data.info())  # Get a summary of the DataFrame
+
+    # Print out the first few rows of the 'cast' and 'crew' columns
+    print("Sample 'cast' column data:")
+    print(data['cast'].head())
+
+    print("Sample 'crew' column data:")
+    print(data['crew'].head())
+else:
+    print("Loaded data is not a DataFrame.")

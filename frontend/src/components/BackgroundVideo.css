@@ -1,0 +1,39 @@
+/* src/components/BackgroundVideo.css */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+  }
+  
+  .video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using deep navy and a subtle blue tone for a cinematic feel */
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 37, 63, 0.8) 0%,
+        rgba(26, 26, 46, 0.6) 50%,
+        rgba(13, 37, 63, 0.8) 100%
+      );
+    mix-blend-mode: overlay;
+  }
+  
